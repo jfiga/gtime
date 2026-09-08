@@ -259,7 +259,6 @@ CITY_DB = [
     ("Dili", "East Timor", "Asia/Dili", "🌴"),
     ("Male", "Maldives", "Indian/Maldives", "🏝️"),
     # Central Asia
-    ("Nur-Sultan", "Kazakhstan", "Asia/Almaty", "🏙️"),
     ("Astana", "Kazakhstan", "Asia/Almaty", "🌟"),
     # More Middle East
     ("Isfahan", "Iran", "Asia/Tehran", "🕌"),
@@ -401,7 +400,7 @@ COUNTRY_CAPITALS = {
     "Oman": "Muscat",
     "Yemen": "Sana'a",
     "Uzbekistan": "Tashkent",
-    "Kazakhstan": "Almaty",  # Note: actually Nur-Sultan/Astana, but using what's in DB
+    "Kazakhstan": "Astana",
     "Kyrgyzstan": "Bishkek",
     "Tajikistan": "Dushanbe",
     "Turkmenistan": "Ashgabat",
