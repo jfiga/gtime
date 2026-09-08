@@ -251,13 +251,10 @@ CITY_DB = [
     ("Bergen", "Norway", "Europe/Oslo", "🐟"),
     ("Aarhus", "Denmark", "Europe/Copenhagen", "🏛️"),
     ("Thessaloniki", "Greece", "Europe/Athens", "🏺"),
-    ("Porto", "Portugal", "Europe/Lisbon", "🍷"),
-    ("Krakow", "Poland", "Europe/Warsaw", "🐲"),
     ("Split", "Croatia", "Europe/Zagreb", "⛵"),
     ("Ljubljana", "Slovenia", "Europe/Ljubljana", "🏰"),
     ("Bratislava", "Slovakia", "Europe/Bratislava", "🏰"),
     # Missing Asian Countries
-    ("Vientiane", "Laos", "Asia/Vientiane", "🛕"),
     ("Bandar Seri Begawan", "Brunei", "Asia/Brunei", "🕌"),
     ("Dili", "East Timor", "Asia/Dili", "🌴"),
     ("Male", "Maldives", "Indian/Maldives", "🏝️"),
