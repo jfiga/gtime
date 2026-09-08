@@ -251,18 +251,14 @@ CITY_DB = [
     ("Bergen", "Norway", "Europe/Oslo", "🐟"),
     ("Aarhus", "Denmark", "Europe/Copenhagen", "🏛️"),
     ("Thessaloniki", "Greece", "Europe/Athens", "🏺"),
-    ("Porto", "Portugal", "Europe/Lisbon", "🍷"),
-    ("Krakow", "Poland", "Europe/Warsaw", "🐲"),
     ("Split", "Croatia", "Europe/Zagreb", "⛵"),
     ("Ljubljana", "Slovenia", "Europe/Ljubljana", "🏰"),
     ("Bratislava", "Slovakia", "Europe/Bratislava", "🏰"),
     # Missing Asian Countries
-    ("Vientiane", "Laos", "Asia/Vientiane", "🛕"),
     ("Bandar Seri Begawan", "Brunei", "Asia/Brunei", "🕌"),
     ("Dili", "East Timor", "Asia/Dili", "🌴"),
     ("Male", "Maldives", "Indian/Maldives", "🏝️"),
     # Central Asia
-    ("Nur-Sultan", "Kazakhstan", "Asia/Almaty", "🏙️"),
     ("Astana", "Kazakhstan", "Asia/Almaty", "🌟"),
     # More Middle East
     ("Isfahan", "Iran", "Asia/Tehran", "🕌"),
@@ -404,7 +400,7 @@ COUNTRY_CAPITALS = {
     "Oman": "Muscat",
     "Yemen": "Sana'a",
     "Uzbekistan": "Tashkent",
-    "Kazakhstan": "Almaty",  # Note: actually Nur-Sultan/Astana, but using what's in DB
+    "Kazakhstan": "Astana",
     "Kyrgyzstan": "Bishkek",
     "Tajikistan": "Dushanbe",
     "Turkmenistan": "Ashgabat",

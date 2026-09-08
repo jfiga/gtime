@@ -11,7 +11,6 @@ import sys
 import os
 import json
 import datetime
-from pathlib import Path
 from typing import List, Tuple, Optional
 from rich.console import Console
 from rich.table import Table
@@ -30,7 +29,6 @@ from .core import (
 from .data import CITY_DB
 
 console = Console()
-FAV_FILE = Path.home() / ".gtime_favorites.json"
 
 def print_city_time(city, country, tz, emoji, meeting_time: Optional[datetime.datetime] = None):
     from .core import ZoneInfo
@@ -71,6 +69,9 @@ def print_favorites(favs: List[str], meeting_time: Optional[datetime.datetime] =
     table.add_column("Local Time", style="green")
     table.add_column("Phase", style="magenta")
     table.add_column("UTC Offset", style="yellow")
+    if meeting_time:
+        local_tz = datetime.datetime.now().astimezone().tzinfo
+        meeting_time_local = meeting_time.replace(tzinfo=local_tz)
     for fav in favs:
         city_info = get_city_by_name(fav)
         if not city_info:
@@ -79,9 +80,6 @@ def print_favorites(favs: List[str], meeting_time: Optional[datetime.datetime] =
         now = datetime.datetime.now(ZoneInfo(tz))
         if meeting_time:
             # Convert meeting time (assumed to be in local timezone) to the city's timezone
-            local_dt = datetime.datetime.now().astimezone()
-            local_tz = local_dt.tzinfo
-            meeting_time_local = meeting_time.replace(tzinfo=local_tz)
             dt = meeting_time_local.astimezone(ZoneInfo(tz))
         else:
             dt = now
@@ -232,7 +230,7 @@ def parse_meeting_time(args: List[str]) -> Tuple[Optional[datetime.datetime], Op
                 meeting_time = local_meeting_time.replace(tzinfo=None)
 
             return meeting_time, timezone_info
-        except (ValueError, Exception):
+        except ValueError:
             continue
 
     return None, None
@@ -344,9 +342,11 @@ def main():
         not_in_favs = []
 
         for city_arg in args[1:]:
-            if city_arg in favs:
-                favs.remove(city_arg)
-                removed_cities.append(city_arg)
+            city_info = get_city_by_name(city_arg)
+            resolved_city = city_info[0] if city_info else city_arg
+            if resolved_city in favs:
+                favs.remove(resolved_city)
+                removed_cities.append(resolved_city)
             else:
                 not_in_favs.append(city_arg)
 
