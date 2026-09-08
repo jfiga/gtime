@@ -344,9 +344,11 @@ def main():
         not_in_favs = []
 
         for city_arg in args[1:]:
-            if city_arg in favs:
-                favs.remove(city_arg)
-                removed_cities.append(city_arg)
+            city_info = get_city_by_name(city_arg)
+            resolved_city = city_info[0] if city_info else city_arg
+            if resolved_city in favs:
+                favs.remove(resolved_city)
+                removed_cities.append(resolved_city)
             else:
                 not_in_favs.append(city_arg)
 
