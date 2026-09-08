@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+- `remove` now resolves cities the same fuzzy, case-insensitive way `add` does, so e.g. `gtime remove tokyo` correctly removes a favorite added as "Tokyo"
+- Removed duplicate `CITY_DB` entries for Porto, Krakow, and Vientiane
+- Fixed Kazakhstan's capital mapping (was pointing at Almaty because the real capital wasn't in the database); dropped the redundant "Nur-Sultan" entry, which is the same city as "Astana" under its 2019-2022 name
+
+### Changed
+- Minor internal cleanup: removed an unused `FAV_FILE` constant in `cli.py`, hoisted a redundant per-loop timezone lookup in `print_favorites`, and simplified a redundant exception clause
+
 ## [0.3.5] - 2025-07-14
 
 ### Fixed
